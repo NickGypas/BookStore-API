@@ -17,6 +17,7 @@ using System.Reflection;
 using System.IO;
 using BookStore_API.Contracts;
 using BookStore_API.Services;
+using BookStore_API.Mappings;
 
 namespace BookStore_API
 {
@@ -47,6 +48,8 @@ namespace BookStore_API
                     builder.AllowAnyHeader();
                 });
             });
+
+            services.AddAutoMapper(typeof(Maps));
 
             services.AddSwaggerGen(c =>
             {
